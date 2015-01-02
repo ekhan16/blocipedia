@@ -1,0 +1,26 @@
+<h1>Edit Wiki</h1>
+
+<div class="row">
+  <div class="col-md-4">
+    <p>Guidelines for wikis</p>
+    <ul>
+      <li>No cat pictures.  There's enough of that all over the rest of the internets.  Don't need none of that here.  Picture of pigeons, however, are highly encouraged!</li>
+      <li>No cupcakes! They're like cakes, but without the effort.</li>
+      <li>If you're Justin Bieber, or a Bieberite or whatever the hell those things that are infatuated with him call themselves, just leave.  Please, just go away.</li>
+    </ul>
+  </div>
+  <div class="col-md-8">
+    <%= form_for @wiki do |f| %>
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control', placeholder: "Enter wiki title" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :body %>
+      <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter post body" %>
+    </div>
+    <div class="form-group">
+      <%= f.submit "Save", class: 'btn btn-success' %>
+    </div>
+    <% end %>
+  </div>

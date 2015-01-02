@@ -46,3 +46,7 @@ group :development do
 end
 
 gem 'devise'
+
+gem 'figaro'
+gem 'bootstrap-sass', '~> 3.1.1'
+gem 'pundit'

@@ -29,6 +29,8 @@ GEM
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
     bcrypt (3.1.9)
+    bootstrap-sass (3.1.1.1)
+      sass (~> 3.2)
     builder (3.2.2)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -46,6 +48,8 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.2.2)
+    figaro (1.0.0)
+      thor (~> 0.14)
     hike (1.2.3)
     i18n (0.7.0)
     jbuilder (2.2.6)
@@ -62,6 +66,8 @@ GEM
     multi_json (1.10.1)
     orm_adapter (0.5.0)
     pg (0.17.1)
+    pundit (0.3.0)
+      activesupport (>= 3.0.0)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -127,11 +133,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-sass (~> 3.1.1)
   coffee-rails (~> 4.0.0)
   devise
+  figaro
   jbuilder (~> 2.0)
   jquery-rails
   pg
+  pundit
   rails (= 4.1.8)
   rails_12factor
   sass-rails (~> 4.0.3)
