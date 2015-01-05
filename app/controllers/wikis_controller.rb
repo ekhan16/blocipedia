@@ -37,6 +37,17 @@ class WikisController < ApplicationController
   	end
   end
 
+  def destroy
+  	@wiki = Wiki.find(params[:id])
+  	if @wiki.destroy
+  		flash[:notice] = "Wiki was utterly destroyed!"
+  		redirect_to wikis_path
+  	else
+  		flash[:error] = "There was an error destroying your wiki. Please try again."
+  		redirect_to @wiki
+  	end
+  end
+
   private
 
   def wiki_params
