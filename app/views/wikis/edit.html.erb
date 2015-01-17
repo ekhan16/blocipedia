@@ -11,16 +11,43 @@
   </div>
   <div class="col-md-8">
     <%= form_for @wiki do |f| %>
-    <div class="form-group">
-      <%= f.label :title %>
-      <%= f.text_field :title, class: 'form-control', placeholder: "Enter wiki title" %>
-    </div>
-    <div class="form-group">
-      <%= f.label :body %>
-      <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter post body" %>
-    </div>
-    <div class="form-group">
-      <%= f.submit "Save", class: 'btn btn-success' %>
-    </div>
+      <div class="form-group">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: 'form-control', placeholder: "Enter wiki title" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :body %>
+        <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter post body" %>
+      </div>
+      <div class="form-group">
+        <%= f.submit "Save", class: 'btn btn-success' %>
+      </div>
     <% end %>
   </div>
+</div>
+<div class="row">
+  <h4>Collaborators</h4>
+  <table class="table">
+    <thead>
+      <th>Email</th>
+      <th></th>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.email %></td>
+          <td>
+            <% unless @wiki.users.include?(user) %>
+              <!--  create button -->
+              <%= link_to "Add as Collaborator", wiki_collaborators_path(@wiki, user_id: user.id), method: :post, class: "btn btn-success" %>
+            <% else %>
+              <!-- destroy button -->
+              <%= link_to "Destroy Collaborator", wiki_collaborator_path(@wiki, @wiki.collaborator_for(user)), method: :delete, class: "btn btn-danger" %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>

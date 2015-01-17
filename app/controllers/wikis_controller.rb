@@ -28,6 +28,7 @@ class WikisController < ApplicationController
 
   def edit
   	@wiki = Wiki.find(params[:id])
+    @users = User.all.select {|user| user != current_user}
   end
 
   def update

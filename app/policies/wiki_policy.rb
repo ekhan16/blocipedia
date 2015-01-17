@@ -1,6 +1,6 @@
 class WikiPolicy < ApplicationPolicy
 
 	def show?
-		!record.private? || user.role?("admin", "premium")
+		!record.private? || user.admin? || user.premium?
 	end
 end
