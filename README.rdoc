@@ -1,6 +1,6 @@
 == README
 
-Blocipedia is a Wikipedia clone I made for the practice purposes.  I think it came out relatively well, considering my skill level.
+Blocipedia is a Wikipedia clone I made for practice purposes.  I think it came out relatively well, considering my skill level.
 
 Devise was used for authentication.
 
